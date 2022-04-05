@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Latest-movie-site/static/css/main.bf5c5b65.css",
+    "main.js": "/Latest-movie-site/static/js/main.6dac4af8.js",
+    "static/js/787.0da9c370.chunk.js": "/Latest-movie-site/static/js/787.0da9c370.chunk.js",
+    "static/media/Loading.gif": "/Latest-movie-site/static/media/Loading.328ad76c0268e221310b.gif",
+    "index.html": "/Latest-movie-site/index.html",
+    "main.bf5c5b65.css.map": "/Latest-movie-site/static/css/main.bf5c5b65.css.map",
+    "main.6dac4af8.js.map": "/Latest-movie-site/static/js/main.6dac4af8.js.map",
+    "787.0da9c370.chunk.js.map": "/Latest-movie-site/static/js/787.0da9c370.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf5c5b65.css",
+    "static/js/main.6dac4af8.js"
+  ]
+}
