@@ -1,0 +1,12 @@
+@import "../Utils";
+.page {
+  @include flex();
+  li {
+    cursor: pointer;
+    font-size: 2rem;
+    margin: 1rem;
+    &:hover {
+      color: greem;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin border() {
+  border-radius: 2rem;
+}

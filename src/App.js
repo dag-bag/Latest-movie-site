@@ -1,23 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Contact from "./components/Contact";
+import Navbar from "./components/Navbar";
+import Slider from "./components/Slider";
+import Spinner from "./components/Spinner";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Download from "./components/Download";
+import Category from "./components/Category";
+import Pagination from "./components/Pagination";
 
 function App() {
+  const [Id, setId] = useState();
+  const [Page, setPage] = useState(1);
+  const [Loading, setLoading] = useState(false);
+  const [Movies, setMovies] = useState([]);
+  let movieDownloadAPi = `https://yts.mx/api/v2/list_movies.json?page=${Page}`;
+  let UpcomingMoveis = `https://yts.mx/api/v2/list_upcoming.json`;
+  let queryApi = `https://yts.mx/api/v2/list_movies.json?query_term=`;
+  async function getMovies(api) {
+    setLoading(true);
+    const resp = await fetch(api);
+    const respData = await resp.json();
+    const data = respData.data.movies;
+    setMovies(data);
+    setLoading(false);
+    console.log(respData);
+  }
+  useEffect(() => {
+    getMovies(movieDownloadAPi);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  // Fetch id functions
+  const Gid = (id) => {
+    setId(id);
+  };
+  console.log(Id);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar getM={getMovies} api={movieDownloadAPi} />
+        <Category getM={getMovies} api={queryApi} />
+        {Loading && <Spinner />}
+        <Routes>
+          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/download"
+            element={<Download ID={Id} setLoading={setLoading} />}
+          />
+          <Route
+            path="/Latest-movie-site"
+            element={
+              <Slider
+                Movies={Movies}
+                api={queryApi}
+                getM={getMovies}
+                Gid={Gid}
+              />
+            }
+          />
+        </Routes>
+      </Router>
+      <Pagination
+        setPage={setPage}
+        page={Page}
+        getM={getMovies}
+        api={movieDownloadAPi}
+      />
     </div>
   );
 }

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,KAAK,CAAC;ECAJ,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;CDQxB;;AAVD,AAEE,KAFG,CAEH,EAAE,CAAC;EACD,MAAM,EAAE,OAAO;EACf,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,IAAI;CAIb;;AATH,AAMI,KANC,CAEH,EAAE,AAIC,MAAM,CAAC;EACN,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "Paginatin.scss",
+        "../_Utils.scss"
+    ],
+    "names": [],
+    "file": "Paginatin.css"
+}
