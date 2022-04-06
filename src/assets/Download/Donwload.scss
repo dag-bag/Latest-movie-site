@@ -1,0 +1,50 @@
+@import "../Utils";
+.downloadPage {
+  @include HW(100vh, 100%);
+
+  // background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  //   url("https://yts.mx/assets/images/movies/wildhood_2021/background.jpg");
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  .downloadCol {
+    @include flex();
+    flex-wrap: wrap;
+
+    .leftCol {
+      @include flex();
+      flex-direction: column;
+      flex: 1 1 60rem;
+      span {
+        color: #efc147;
+      }
+      h1 {
+        font-size: 6rem;
+      }
+      h2 {
+        font-size: 3rem;
+      }
+      .about {
+        padding: 5rem;
+      }
+    }
+    .rightCol {
+      flex-direction: column;
+      height: 100%;
+      @include flex();
+      flex: 1 1 40rem;
+      .imgContainer {
+        width: 30rem;
+        img {
+          padding-top: 3rem;
+          width: 100%;
+        }
+      }
+      button {
+        padding: 1rem 3rem;
+        font-size: 1.7rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+}

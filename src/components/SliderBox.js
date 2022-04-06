@@ -2,6 +2,7 @@ import { MdOutlineStarPurple500 } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "../assets/Home/Slider/subSlider.css";
 import React, { useState } from "react";
+import { configure } from "@testing-library/react";
 export default function SliderBox(props) {
   // const getID = (e) => {
 
@@ -9,7 +10,9 @@ export default function SliderBox(props) {
 
   const getId = (eL) => {
     const id = eL.currentTarget.id;
-    props.fID(id);
+    const slug = eL.currentTarget.attributes["data"].value;
+
+    props.fID(id, slug);
   };
 
   const showTag = (e) => {
@@ -29,6 +32,7 @@ export default function SliderBox(props) {
             genres,
             date_uploaded,
             id,
+            slug,
           } = item;
 
           return (
@@ -48,10 +52,11 @@ export default function SliderBox(props) {
                   <span>{rating}</span>
                 </div>
                 <Link
-                  to={`/download`}
+                  to={`/download/${slug}/${id}`}
                   id={id}
                   onClick={getId}
                   className="donwloadBtn"
+                  data={slug}
                 >
                   DownLoad Now
                 </Link>

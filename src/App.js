@@ -11,6 +11,7 @@ import Pagination from "./components/Pagination";
 
 function App() {
   const [Id, setId] = useState();
+  const [Slug, setSlug] = useState();
   const [Page, setPage] = useState(1);
   const [Loading, setLoading] = useState(false);
   const [Movies, setMovies] = useState([]);
@@ -31,8 +32,9 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // Fetch id functions
-  const Gid = (id) => {
+  const Gid = (id, slug) => {
     setId(id);
+    setSlug(slug);
   };
   console.log(Id);
   return (
@@ -44,7 +46,7 @@ function App() {
         <Routes>
           <Route path="/contact" element={<Contact />} />
           <Route
-            path="/download"
+            path={`/download/:slug/:id`}
             element={<Download ID={Id} setLoading={setLoading} />}
           />
           <Route
@@ -60,12 +62,12 @@ function App() {
           />
         </Routes>
       </Router>
-      <Pagination
+      {/* <Pagination
         setPage={setPage}
         page={Page}
         getM={getMovies}
         api={movieDownloadAPi}
-      />
+      /> */}
     </div>
   );
 }

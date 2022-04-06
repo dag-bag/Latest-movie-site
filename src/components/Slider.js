@@ -2,8 +2,8 @@ import React from "react";
 import "../assets/Home/Slider/Slider.css";
 import SliderBox from "./SliderBox";
 export default function Slider(props) {
-  const getID = (id) => {
-    props.Gid(id);
+  const getID = (id, slug) => {
+    props.Gid(id, slug);
   };
 
   return (

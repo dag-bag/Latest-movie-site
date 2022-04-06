@@ -3,6 +3,11 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin HW($H, $W) {
+  height: $H;
+  width: $W;
+}
 @mixin border() {
   border-radius: 2rem;
 }
