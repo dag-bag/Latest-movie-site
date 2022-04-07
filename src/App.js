@@ -7,7 +7,6 @@ import Spinner from "./components/Spinner";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Download from "./components/Download";
 import Category from "./components/Category";
-import Pagination from "./components/Pagination";
 
 function App() {
   const [Id, setId] = useState();
@@ -41,7 +40,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar getM={getMovies} api={movieDownloadAPi} />
-        <Category getM={getMovies} api={queryApi} />
+        <Category getM={getMovies} />
         {Loading && <Spinner />}
         <Routes>
           <Route path="/contact" element={<Contact />} />
@@ -52,12 +51,14 @@ function App() {
           <Route
             path="/Latest-movie-site"
             element={
-              <Slider
-                Movies={Movies}
-                api={queryApi}
-                getM={getMovies}
-                Gid={Gid}
-              />
+              <>
+                <Slider
+                  Movies={Movies}
+                  api={queryApi}
+                  getM={getMovies}
+                  Gid={Gid}
+                />
+              </>
             }
           />
         </Routes>

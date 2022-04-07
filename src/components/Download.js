@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../assets/Download/Donwload.css";
 import { useParams } from "react-router-dom";
+
 export default function Download(props) {
   const { id, slug } = useParams();
   const [SingleData, setSingleData] = useState([]);
-  const api = `https://yts.torrentbay.to/api/v2/movie_details.json?movie_id=${id}`;
+  const [Data, setData] = useState([]);
+
+  const api = `https://yts.mx/api/v2/movie_details.json?movie_id=${id}`;
   async function getMovies(api) {
     // const resp = await fetch(api);
     // const respData = await resp.json();
@@ -13,6 +16,18 @@ export default function Download(props) {
     // console.log(resp);
     props.setLoading(true);
     const resp = await axios.get(api);
+
+    // fetch()
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((movieData) => {
+    //     const movieObj = movieData.data.movie;
+    //     setSingleData(movieObj);
+    //   });
+    // props.setLoading(false);
+    // // const respData = await resp.json();
+    // console.log(resp);
     const data = resp.data.data;
     const realData = data === undefined ? [] : data;
     setSingleData(realData.movie);
@@ -26,7 +41,7 @@ export default function Download(props) {
     getMovies(api);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(SingleData);
+
   const {
     title,
     title_long,
@@ -42,12 +57,7 @@ export default function Download(props) {
     <div
       className="downloadPage"
       style={{
-        background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${background_image_original}`,
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        width: "100%",
-        height: "auto",
+        background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("${background_image_original}")`,
       }}
     >
       <div className="downloadCol">
