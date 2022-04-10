@@ -6,10 +6,10 @@ import { useParams } from "react-router-dom";
 export default function Download(props) {
   const { id, slug } = useParams();
   const [SingleData, setSingleData] = useState([]);
-  const [Data, setData] = useState([]);
 
   const api = `https://yts.mx/api/v2/movie_details.json?movie_id=${id}`;
   async function getMovies(api) {
+    document.title = slug;
     // const resp = await fetch(api);
     // const respData = await resp.json();
     // const data = respData.data.movies;
@@ -53,6 +53,7 @@ export default function Download(props) {
     large_cover_image,
     background_image_original,
   } = SingleData;
+
   return (
     <div
       className="downloadPage"
