@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../assets/Navbar/Navbar.css";
 import { Link } from "react-router-dom";
+import { AiOutlineSearch } from "react-icons/ai";
+
 export default function Navbar(props) {
   const [text, settext] = useState("");
   let queryApi = `https://yts.mx/api/v2/list_movies.json?query_term=`;
@@ -45,6 +47,7 @@ export default function Navbar(props) {
               onChange={textChange}
               value={text}
             />
+            <AiOutlineSearch className="searchIcon" onClick={searchMovies} />
           </form>
         </div>
       </header>
