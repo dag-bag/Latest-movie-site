@@ -14,6 +14,9 @@ function App() {
   const [Page, setPage] = useState(1);
   const [Loading, setLoading] = useState(false);
   const [Movies, setMovies] = useState([]);
+  const [length, setlength] = useState([]);
+  const [Count, setCount] = useState();
+
   let movieDownloadAPi = `https://yts.mx/api/v2/list_movies.json?page=${Page}`;
   let UpcomingMoveis = `https://yts.mx/api/v2/list_upcoming.json`;
   let queryApi = `https://yts.mx/api/v2/list_movies.json?query_term=`;
@@ -24,8 +27,25 @@ function App() {
     const data = respData.data.movies;
     setMovies(data);
     setLoading(false);
-    console.log(respData);
+    setlength(data.length);
   }
+  async function fetchMoreData(api) {
+    // setPage(P);
+    const resp = await fetch(
+      `https://yts.mx/api/v2/list_movies.json?page=${Page}&limit=50`
+    );
+    const respData = await resp.json();
+    const data = respData.data.movies;
+    // setMovies(data);
+
+    setlength(data.length);
+    setCount(respData.data.movie_count);
+    setMovies(Movies.concat(data));
+    setPage(Page + 1);
+    // console.log(data);
+  }
+
+  // console.log(Count);
   useEffect(() => {
     getMovies(movieDownloadAPi);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,10 +73,13 @@ function App() {
             element={
               <>
                 <Slider
+                  fetchMoreData={fetchMoreData}
+                  length={length}
                   Movies={Movies}
                   api={queryApi}
                   getM={getMovies}
                   Gid={Gid}
+                  count={Count}
                 />
               </>
             }

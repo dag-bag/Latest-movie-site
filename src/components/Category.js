@@ -43,7 +43,6 @@ export default function Category(props) {
             onClick={showCategory}
             value={item}
           >
-            {" "}
             {item}
           </button>
         );

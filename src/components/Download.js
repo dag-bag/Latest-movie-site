@@ -57,7 +57,7 @@ export default function Download(props) {
     <div
       className="downloadPage"
       style={{
-        background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("${background_image_original}")`,
+        background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${background_image_original})`,
       }}
     >
       <div className="downloadCol">

@@ -2,7 +2,8 @@ import { MdOutlineStarPurple500 } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "../assets/Home/Slider/subSlider.css";
 import React, { useState } from "react";
-import { configure } from "@testing-library/react";
+
+import Spinner from "./Spinner";
 export default function SliderBox(props) {
   // const getID = (e) => {
 
@@ -24,7 +25,7 @@ export default function SliderBox(props) {
       {props.Movies === undefined ? (
         <h1 style={{ fontSize: "3rem" }}>Result not found</h1>
       ) : (
-        props.Movies.map((item) => {
+        props.Movies.map((item, index) => {
           const {
             medium_cover_image,
             rating,
@@ -36,7 +37,7 @@ export default function SliderBox(props) {
           } = item;
 
           return (
-            <div className="sliderBox" key={medium_cover_image}>
+            <div className="sliderBox" key={index}>
               <div className="imgcontains">
                 <img src={medium_cover_image} alt="" />
               </div>

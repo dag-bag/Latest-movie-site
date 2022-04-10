@@ -2,8 +2,8 @@
 .downloadPage {
   @include HW(100vh, 100%);
 
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(`https://yts.mx/assets/images/movies/wildhood_2021/background.jpg`);
+  // background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  //   url(`https://yts.mx/assets/images/movies/wildhood_2021/background.jpg`);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
