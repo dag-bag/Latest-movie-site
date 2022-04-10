@@ -1,4 +1,5 @@
 @import "../Utils";
+
 .downloadPage {
   @include HW(100vh, 100%);
 
@@ -9,7 +10,7 @@
   background-size: cover;
   .downloadCol {
     @include flex();
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 
     .leftCol {
       @include flex();
@@ -33,17 +34,86 @@
       height: 100%;
       @include flex();
       flex: 1 1 40rem;
+
       .imgContainer {
         width: 30rem;
+
         img {
           padding-top: 3rem;
           width: 100%;
         }
       }
+
+      padding: 1rem 3rem;
+      font-size: 1.7rem;
+      margin-top: 2rem;
       button {
-        padding: 1rem 3rem;
-        font-size: 1.7rem;
-        margin-top: 2rem;
+        position: relative;
+        display: inline-flex;
+        width: 180px;
+        height: 55px;
+        margin: 0 15px;
+        perspective: 1000px;
+      }
+      button {
+        font-size: 1.9rem;
+        letter-spacing: 0.1rem;
+        transform-style: preserve-3d;
+        transform: translateZ(-25px);
+        transition: transform 0.25s;
+        font-family: "Montserrat", sans-serif;
+        margin-bottom: 1rem;
+      }
+      button:before,
+      button:after {
+        position: absolute;
+        content: "BUTTON";
+        height: 5.5rem;
+        width: 18rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #efc147;
+        box-sizing: border-box;
+        border-radius: 0.5rem;
+      }
+      button:before {
+        content: "Download Now";
+        color: #fff;
+        background: #000;
+        transform: rotateY(0deg) translateZ(25px);
+      }
+      button:after {
+        content: "Choose Quality";
+        color: white;
+        transform: rotateX(90deg) translateZ(25px);
+      }
+      button:hover {
+        transform: translateZ(-25px) rotateX(-90deg);
+      }
+      .btn2 {
+        .donwloadLinks {
+          text-transform: uppercase;
+          color: #fff;
+          border: 2px solid #efc147;
+          display: inline-block;
+          padding: 15px;
+          padding-right: 50px;
+          padding-left: 50px;
+          border-radius: 3px;
+          cursor: pointer;
+          overflow: hidden;
+          box-sizing: border-box;
+          font-size: 14px;
+          transition: all 0.3s ease;
+          //
+          margin: 0 1rem;
+
+          &:hover {
+            background-color: #efc147;
+            color: #060e33 !important;
+          }
+        }
       }
     }
   }

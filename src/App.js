@@ -10,7 +10,7 @@ import Category from "./components/Category";
 
 function App() {
   const [Id, setId] = useState();
-  const [Slug, setSlug] = useState();
+
   const [Page, setPage] = useState(1);
   const [Loading, setLoading] = useState(false);
   const [Movies, setMovies] = useState([]);
@@ -18,7 +18,7 @@ function App() {
   const [Count, setCount] = useState();
 
   let movieDownloadAPi = `https://yts.mx/api/v2/list_movies.json?page=${Page}`;
-  let UpcomingMoveis = `https://yts.mx/api/v2/list_upcoming.json`;
+  // let UpcomingMoveis = `https://yts.mx/api/v2/list_upcoming.json`;
   let queryApi = `https://yts.mx/api/v2/list_movies.json?query_term=`;
   async function getMovies(api) {
     setLoading(true);
@@ -53,7 +53,6 @@ function App() {
   // Fetch id functions
   const Gid = (id, slug) => {
     setId(id);
-    setSlug(slug);
   };
   console.log(Id);
   return (

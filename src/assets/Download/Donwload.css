@@ -16,8 +16,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
 }
 
 .downloadPage .downloadCol .leftCol {
@@ -73,6 +73,9 @@
   -webkit-box-flex: 1;
       -ms-flex: 1 1 40rem;
           flex: 1 1 40rem;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  margin-top: 2rem;
 }
 
 .downloadPage .downloadCol .rightCol .imgContainer {
@@ -85,8 +88,94 @@
 }
 
 .downloadPage .downloadCol .rightCol button {
-  padding: 1rem 3rem;
-  font-size: 1.7rem;
-  margin-top: 2rem;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.downloadPage .downloadCol .rightCol button {
+  font-size: 1.9rem;
+  letter-spacing: 0.1rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translateZ(-25px);
+          transform: translateZ(-25px);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.downloadPage .downloadCol .rightCol button:before,
+.downloadPage .downloadCol .rightCol button:after {
+  position: absolute;
+  content: "BUTTON";
+  height: 5.5rem;
+  width: 18rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 2px solid #efc147;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 0.5rem;
+}
+
+.downloadPage .downloadCol .rightCol button:before {
+  content: "Download Now";
+  color: #fff;
+  background: #000;
+  -webkit-transform: rotateY(0deg) translateZ(25px);
+          transform: rotateY(0deg) translateZ(25px);
+}
+
+.downloadPage .downloadCol .rightCol button:after {
+  content: "Choose Quality";
+  color: white;
+  -webkit-transform: rotateX(90deg) translateZ(25px);
+          transform: rotateX(90deg) translateZ(25px);
+}
+
+.downloadPage .downloadCol .rightCol button:hover {
+  -webkit-transform: translateZ(-25px) rotateX(-90deg);
+          transform: translateZ(-25px) rotateX(-90deg);
+}
+
+.downloadPage .downloadCol .rightCol .btn2 .donwloadLinks {
+  text-transform: uppercase;
+  color: #fff;
+  border: 2px solid #efc147;
+  display: inline-block;
+  padding: 15px;
+  padding-right: 50px;
+  padding-left: 50px;
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin: 0 1rem;
+}
+
+.downloadPage .downloadCol .rightCol .btn2 .donwloadLinks:hover {
+  background-color: #efc147;
+  color: #060e33 !important;
 }
 /*# sourceMappingURL=Donwload.css.map */

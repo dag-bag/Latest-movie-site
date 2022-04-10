@@ -59,6 +59,7 @@ export default function Download(props) {
       style={{
         background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${background_image_original})`,
       }}
+      key={id}
     >
       <div className="downloadCol">
         <div className="leftCol">
@@ -87,13 +88,13 @@ export default function Download(props) {
             <img src={large_cover_image} alt="" />
           </div>
           <button>Download Now</button>
-          <div className="btn">
+          <div className="btn2">
             {torrents === undefined
               ? "not"
               : torrents.map((item) => {
                   const { quality, size, url } = item;
                   return (
-                    <a href={url}>
+                    <a href={url} key={size} className="donwloadLinks">
                       {quality}|{size}
                     </a>
                   );
