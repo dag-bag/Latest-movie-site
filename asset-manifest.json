@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Latest-movie-site/static/css/main.c6422650.css",
-    "main.js": "/Latest-movie-site/static/js/main.327ccbbf.js",
+    "main.css": "/Latest-movie-site/static/css/main.a9f0ed49.css",
+    "main.js": "/Latest-movie-site/static/js/main.acf9d049.js",
     "static/js/787.0da9c370.chunk.js": "/Latest-movie-site/static/js/787.0da9c370.chunk.js",
     "static/media/Loading.gif": "/Latest-movie-site/static/media/Loading.328ad76c0268e221310b.gif",
     "index.html": "/Latest-movie-site/index.html",
-    "main.c6422650.css.map": "/Latest-movie-site/static/css/main.c6422650.css.map",
-    "main.327ccbbf.js.map": "/Latest-movie-site/static/js/main.327ccbbf.js.map",
+    "main.a9f0ed49.css.map": "/Latest-movie-site/static/css/main.a9f0ed49.css.map",
+    "main.acf9d049.js.map": "/Latest-movie-site/static/js/main.acf9d049.js.map",
     "787.0da9c370.chunk.js.map": "/Latest-movie-site/static/js/787.0da9c370.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6422650.css",
-    "static/js/main.327ccbbf.js"
+    "static/css/main.a9f0ed49.css",
+    "static/js/main.acf9d049.js"
   ]
 }
